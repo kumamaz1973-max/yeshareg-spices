@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የሻረግ ቅመማ-ቅመም | Yeshareg Spices</title>
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #27ae60;
+            --dark-color: #2c3e50;
+            --light-color: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+        .logo p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2.section-title {
+            text-align: center;
+            color: var(--dark-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+        .about-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+            text-align: center;
+            padding: 1rem;
+            border-top: 3px solid var(--secondary-color);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .product-card h3 {
+            margin: 8px 0 4px;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        .product-card p {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .stockists-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .stockist-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-color);
+            font-weight: 500;
+        }
+        .out-stock {
+            border-left-color: #e74c3c !important;
+        }
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 20px;
+        }
+        @media(max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>🏺 የሻረግ ቅመማ-ቅመም</h1>
+            <p>Yeshareg Spices (Est. 2010)</p>
+        </div>
+        <nav>
+            <a href="#about">ስለ እኛ / About</a>
+            <a href="#products">ምርቶች / Products</a>
+            <a href="#stockists">የሚገኙባቸው ቦታዎች / Where to Buy</a>
+            <a href="#contact">ያግኙን / Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>ጥራቱን እና ጣዕሙን የጠበቀ ንጹህ ቅመም</h2>
+        <p>Pure, Quality & Flavorful Local Spices Direct to Supermarkets</p>
+        <a href="#products" class="btn">ምርቶቻችንን ይመልከቱ / View Products</a>
+    </div>
+
+    <div class="container">
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2 class="section-title">ስለ እኛ / About Us</h2>
+            <div class="about-content">
+                <p><strong>የሻረግ ቅመማ-ቅመም</strong> እ.ኤ.አ አቆጣጠር 2010 ዓ.ም. የተመሠረተ ሲሆን፣ ከፍተኛ የንጽህና ጥበቃ በማድረግና ጥራታቸውን የጠበቁ ቅመሞችን በቀጥታ ለታወቁ ሱፐርማርኬቶች በማቅረብ ይታወቃል።</p>
+                <p><em>Yeshareg Spices, established in 2010, is dedicated to providing high-quality, hygienic, and premium spices directly to supermarkets and retail stores across Addis Ababa.</em></p>
+            </div>
+        </section>
+
+        <!-- Products Catalog Section -->
+        <section id="products">
+            <h2 class="section-title">ዋና ዋና ምርቶቻችን / Our Products</h2>
+            <div class="products-grid">
+                
+                <div class="product-card">
+                    <img src="mekelesha.jpg" onerror="this.onerror=null; this.src='mekelesha.jpg.jpg';" alt="መከለሻ">
+                    <h3>መከለሻ / Mixed Spices</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="black-pepper.jpg" onerror="this.onerror=null; this.src='black-pepper.jpg.jpg';" alt="ጥቁር ቁንዶ በርበሬ">
+                    <h3>ጥቁር ቁንዶ በርበሬ / Black Pepper</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="cardamom.jpg" onerror="this.onerror=null; this.src='cardamom.jpg.jpg';" alt="ኮረሪማ">
+                    <h3>ኮረሪማ / Cardamom</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="white-pepper.jpg" onerror="this.onerror=null; this.src='white-pepper.jpg.jpg';" alt="ነጭ ቁንዶ በርበሬ">
+                    <h3>ነጭ ቁንዶ በርበሬ / White Pepper</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="turmeric.jpg" onerror="this.onerror=null; this.src='turmeric.jpg.jpg';" alt="እርድ">
+                    <h3>እርድ / Turmeric</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="cinnamon.jpg" onerror="this.onerror=null; this.src='cinnamon.jpg.jpg';" alt="ቀረፋ">
+                    <h3>ቀረፋ / Cinnamon</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="ginger.jpg" onerror="this.onerror=null; this.src='ginger.jpg.jpg';" alt="ዝንጅብል">
+                    <h3>ዝንጅብል / Ginger</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="cumin.jpg" onerror="this.onerror=null; this.src='cumin.jpg.jpg';" alt="ከሙን">
+                    <h3>ከሙን / Cumin</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="butter-spices.jpg" onerror="this.onerror=null; this.src='butter-spices.jpg.jpg';" alt="የቅቤ ቅመም">
+                    <h3>የቅቤ ቅመም / Butter Spices</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="curry.jpg" onerror="this.onerror=null; this.src='curry.jpg.jpg';" alt="ካሪ ፓውደር">
+                    <h3>ካሪ ፓውደር / Curry Powder</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="tea-spice.jpg" onerror="this.onerror=null; this.src='tea-spice.jpg.jpg';" alt="ድብልቅ የሻይ ቅመም">
+                    <h3>ድብልቅ የሻይ ቅመም / Tea Spice</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="rosemary.jpg" onerror="this.onerror=null; this.src='rosemary.jpg.jpg';" alt="ሮዝመሪ">
+                    <h3>ሮዝመሪ / Rosemary</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="mustard.jpg" onerror="this.onerror=null; this.src='mustard.jpg.jpg';" alt="ሰናፍጭ">
+                    <h3>ሰናፍጭ / Mustard</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+                <div class="product-card">
+                    <img src="nutmeg.jpg" onerror="this.onerror=null; this.src='nutmeg.jpg.jpg';" alt="ገውዝ">
+                    <h3>ገውዝ / Nutmeg</h3>
+                    <p>Net - 50g</p>
+                    <span class="badge">የሻረግ ቅመም</span>
+                </div>
+
+		<div class="product-card">
+    		    <div style="height: 215px; visibility: hidden;"></div>
+    		    <h3>እና ልዩ ልዩ ቅመሞች / Others</h3>
+    		    <p>Net - 50g</p>
+    		    <span class="badge">የሻረግ ቅመም</span>
+		</div>
+		
+            </div>
+        </section>
+
+        <!-- Where to Buy Section -->
+        <section id="stockists">
+            <h2 class="section-title">ምርቶቻችን የሚገኙባቸው ሱፐርማርኬቶች / Where to Buy</h2>
+            <div class="stockists-list">
+                <div class="stockist-item">ባምቢስ ሱፐርማርኬት (Bambis)</div>
+                <div class="stockist-item">ሎሚያድ ሱፐርማርኬት (Lomiad)</div>
+                <div class="stockist-item">ጋራ ሱፐርማርኬት (Gara)</div>
+                <div class="stockist-item">በሽ ሱፐርማርኬት (Besh)</div>
+                <div class="stockist-item">እመዋ ሱፐርማርኬት (Emewa)</div>
+                <div class="stockist-item">BGS ሱፐርማርኬት</div>
+                <div class="stockist-item">ጋራድ ሱፐርማርኬት (Garad)</div>
+                <div class="stockist-item">ኖቪስ ሱፐርማርኬት (Novis)</div>
+                <div class="stockist-item">አራዳ ማርት (Arada Mart)</div>
+                <div class="stockist-item">ሰረገላ PLC (Seregela)</div>
+                <div class="stockist-item out-stock">ሸዋ ሱፐርማርኬት (በቅርቡ ምርቶቻችን ይገባል)</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">ያግኙን / Contact Us</h2>
+            <div class="about-content" style="text-align: center;">
+                <p>📍 <strong>አድራሻ / Address:</strong> አዲስ አበባ፣ ንፋስ ስልክ ላፍቶ፣ ሀይሌ ጋርመንት ኢንደስትሪ ዞን</p>
+                <p>📞 <strong>ስልክ (Office):</strong> 0114164056 / 0911664775 / 0911872827</p>
+                <p>✉️ <strong>ኢሜይል / Email:</strong> yeshit19@gmail.com</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 የሻረግ ቅመማ-ቅመም (Yeshareg Spices). All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
